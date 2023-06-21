@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookInventory", "BookInventory\BookInventory.csproj", "{3D9F2C7A-846E-4677-9030-6DD86C4CFCDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookInventory.WebApi", "BookInventory.WebApi\BookInventory.WebApi.csproj", "{3D9F2C7A-846E-4677-9030-6DD86C4CFCDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookInventory.Business", "BookInventory.Business\BookInventory.Business.csproj", "{B4C210E9-C174-4BF4-AD7D-47F2CABEE72A}"
 EndProject

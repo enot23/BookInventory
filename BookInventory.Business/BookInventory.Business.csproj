@@ -12,4 +12,9 @@
       <Folder Include="Services" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BookInventory.Common\BookInventory.Common.csproj" />
+      <ProjectReference Include="..\BookInventory.Data\BookInventory.Data.csproj" />
+    </ItemGroup>
+
 </Project>

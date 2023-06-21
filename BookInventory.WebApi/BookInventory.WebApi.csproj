@@ -17,4 +17,8 @@
       <Folder Include="ViewModels" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BookInventory.Business\BookInventory.Business.csproj" />
+    </ItemGroup>
+
 </Project>
