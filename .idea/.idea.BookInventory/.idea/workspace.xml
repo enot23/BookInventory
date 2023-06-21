@@ -4,25 +4,115 @@
     <projectFile profileName="IIS Express">BookInventory.Business/BookInventory.Business.csproj</projectFile>
     <projectFile profileName="http">BookInventory.Business/BookInventory.Business.csproj</projectFile>
     <projectFile profileName="https">BookInventory.Business/BookInventory.Business.csproj</projectFile>
+    <projectFile profileName="IIS Express">BookInventory.WebApi/BookInventory.WebApi.csproj</projectFile>
+    <projectFile profileName="http">BookInventory.WebApi/BookInventory.WebApi.csproj</projectFile>
+    <projectFile profileName="https">BookInventory.WebApi/BookInventory.WebApi.csproj</projectFile>
     <projectFile profileName="IIS Express">BookInventory/BookInventory.csproj</projectFile>
     <projectFile profileName="http">BookInventory/BookInventory.csproj</projectFile>
     <projectFile profileName="https">BookInventory/BookInventory.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79205a0f-97e3-4f37-8e76-e5832095b493" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Entities/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookInventory/.idea/workspace.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Interfaces/IBaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Interfaces/IBookRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Interfaces/ICategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Repositories/BaseRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Repositories/BookRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BookInventory.Data/Repositories/CategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookInventory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookInventory/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookInventory.Data/BookInventory.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BookInventory.Data/BookInventory.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookInventory.WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookInventory.WebApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c194bad9c81cadd015172d666c242cc31b64710d9ce178c88fdc0b3a941a3e/AppContext.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.BookInventory.WebApi: http">
+    <configuration name="BookInventory.WebApi: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BookInventory.WebApi/BookInventory.WebApi.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="BookInventory.WebApi: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BookInventory.WebApi/BookInventory.WebApi.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="BookInventory.WebApi: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BookInventory.WebApi/BookInventory.WebApi.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+  </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Add entities">
+      <created>1687383476128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687383476128</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add DbContext and init migration">
+      <created>1687386374196</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687386374196</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add entities" />
+    <MESSAGE value="Add DbContext" />
+    <MESSAGE value="Add DbContext and init migration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add DbContext and init migration" />
+  </component>
 </project>

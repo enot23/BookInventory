@@ -1,14 +1,20 @@
+using BookInventory.Data.Interfaces;
+using BookInventory.Data.Repositories;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Add DbContext.
 builder.Services.AddDbContext<BookInventory.Data.AppContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("AppConnectionString"),
         o => o.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null)));
+
+// Add services to the container.
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
