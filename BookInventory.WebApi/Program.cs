@@ -1,3 +1,6 @@
+using BookInventory.Business.Interfaces;
+using BookInventory.Business.Services;
+using BookInventory.Common.Mappings;
 using BookInventory.Data.Interfaces;
 using BookInventory.Data.Repositories;
 using Microsoft.AspNetCore.Authentication.Negotiate;
@@ -11,10 +14,15 @@ builder.Services.AddDbContext<BookInventory.Data.AppContext>(options =>
         builder.Configuration.GetConnectionString("AppConnectionString"),
         o => o.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null)));
 
-// Add services to the container.
+// Register services and dependencies
+
+builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

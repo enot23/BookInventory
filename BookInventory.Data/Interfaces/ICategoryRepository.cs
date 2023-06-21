@@ -4,5 +4,5 @@ namespace BookInventory.Data.Interfaces;
 
 public interface ICategoryRepository : IBaseRepository<Category>
 {
-    
+    // Additional methods specific to the Category entity can be defined here if needed
 }
