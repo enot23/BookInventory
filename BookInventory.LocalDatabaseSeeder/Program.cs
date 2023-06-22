@@ -65,6 +65,57 @@ public static class Program
             },
         });
 
+        context.Database.ExecuteSqlRaw(
+            @"CREATE PROCEDURE GetBooks
+              @PageNumber INT,
+              @PageSize INT,
+              @SearchQuery NVARCHAR(100),
+              @SortColumn NVARCHAR(50),
+              @SortDirection NVARCHAR(4)
+            AS
+            BEGIN
+              SET NOCOUNT ON;
+
+              DECLARE @Offset INT = (@PageNumber - 1) * @PageSize;
+              DECLARE @Limit INT = @PageSize;
+
+              DECLARE @SortDirectionSQL NVARCHAR(10) = CASE WHEN @SortDirection = 'desc' THEN 'DESC' ELSE 'ASC' END;
+
+              DECLARE @SortColumnSQL NVARCHAR(100) = 
+                CASE 
+                  WHEN @SortColumn = 'Title' THEN 'Title'
+                  WHEN @SortColumn = 'Author' THEN 'Author'
+                END;
+
+              DECLARE @SearchQuerySQL NVARCHAR(100) = '%' + @SearchQuery + '%';
+
+              SELECT *
+              FROM Books
+              WHERE (@SearchQuery IS NULL OR Title LIKE @SearchQuerySQL OR Author LIKE @SearchQuerySQL)
+              ORDER BY CASE WHEN @SortColumnSQL IS NULL THEN NULL ELSE
+                CASE WHEN @SortDirectionSQL = 'DESC' THEN 
+                  CASE WHEN @SortColumnSQL = 'Title' THEN Title END
+                END
+              END DESC,
+              CASE WHEN @SortColumnSQL IS NULL THEN NULL ELSE
+                CASE WHEN @SortDirectionSQL = 'ASC' THEN 
+                  CASE WHEN @SortColumnSQL = 'Title' THEN Title END
+                END
+              END ASC,
+              CASE WHEN @SortColumnSQL IS NULL THEN NULL ELSE
+                CASE WHEN @SortDirectionSQL = 'DESC' THEN 
+                  CASE WHEN @SortColumnSQL = 'Author' THEN Author END
+                END
+              END DESC,
+              CASE WHEN @SortColumnSQL IS NULL THEN NULL ELSE
+                CASE WHEN @SortDirectionSQL = 'ASC' THEN 
+                  CASE WHEN @SortColumnSQL = 'Author' THEN Author END
+                END
+              END ASC
+              OFFSET @Offset ROWS
+              FETCH NEXT @Limit ROWS ONLY;
+            END");
+
         context.SaveChanges();
     }
 }
