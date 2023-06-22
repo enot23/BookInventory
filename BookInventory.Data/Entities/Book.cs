@@ -16,7 +16,7 @@ public class Book : AuditableBaseEntity
     
     public int Quantity { get; set; }
     
-    public int CategoryId { get; set; } = 1;
+    public int? CategoryId { get; set; }
     
     public virtual Category Category { get; set; }
 }

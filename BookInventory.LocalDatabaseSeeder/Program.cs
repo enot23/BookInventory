@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookInventory.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace BookInventory.LocalDatabaseSeeder;
@@ -24,5 +25,46 @@ public static class Program
 			
         Console.WriteLine(@"Creating Database structure...");
         context.Database.Migrate(); // Creates database and structure
+        
+        Console.WriteLine(@"Seeding Database...");
+        context.AddRange(new List<Category>
+        {
+            new Category
+            {
+                Name = "Other",
+                Description = "Other"
+            },
+            new Category
+            {
+                Name = "Databases",
+                Description = "Databases"
+            },
+            new Category
+            {
+                Name = "Web Development",
+                Description = "Web Development"
+            },
+            new Category
+            {
+                Name = "Mobile Development",
+                Description = "Mobile Development"
+            },
+        });
+        context.SaveChanges();
+        
+        context.AddRange(new List<Book>()
+        {
+            new Book()
+            {
+                Title = "Pro ASP.NET Core MVC 2", 
+                Author = "Adam Freeman",
+                ISBN = "978-1-4842-3197-3",
+                PublicationYear = 2017, 
+                Quantity = 1,
+                CategoryId = 3
+            },
+        });
+
+        context.SaveChanges();
     }
 }

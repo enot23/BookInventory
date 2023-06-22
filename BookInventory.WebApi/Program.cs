@@ -1,7 +1,9 @@
 using System;
 using BookInventory.Business.Interfaces;
+using BookInventory.Business.Interfaces.Validators;
 using BookInventory.Business.Mappings;
 using BookInventory.Business.Services;
+using BookInventory.Business.Validators;
 using BookInventory.Data.Interfaces;
 using BookInventory.Data.Repositories;
 using Microsoft.AspNetCore.Authentication.Negotiate;
@@ -26,6 +28,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+builder.Services.AddScoped<ICategoryValidator, CategoryValidator>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 

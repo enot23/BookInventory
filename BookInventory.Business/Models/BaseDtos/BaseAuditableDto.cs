@@ -1,4 +1,6 @@
-﻿namespace BookInventory.Business.Models;
+﻿using System;
+
+namespace BookInventory.Business.Models;
 
 public class BaseAuditableDto : BaseDto
 {

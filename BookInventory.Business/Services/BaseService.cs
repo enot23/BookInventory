@@ -10,7 +10,7 @@ using BookInventory.Data.Interfaces;
 
 namespace BookInventory.Business.Services;
 
-public class BaseService<TEntity, TDto> : IBaseService<TEntity, TDto> where TEntity : BaseEntity where TDto : BaseDto
+public class BaseService<TEntity, TDto, TCreateDeleteModel> : IBaseService<TEntity, TDto, TCreateDeleteModel> where TEntity : BaseEntity where TDto : BaseDto
 {
     private readonly IBaseRepository<TEntity> _repository;
     private readonly IMapper _mapper;
@@ -39,14 +39,14 @@ public class BaseService<TEntity, TDto> : IBaseService<TEntity, TDto> where TEnt
         return _mapper.Map<IEnumerable<TDto>>(entities);
     }
 
-    public virtual async Task<TDto> AddAsync(TDto dto)
+    public virtual async Task<TDto> AddAsync(TCreateDeleteModel dto)
     {
         TEntity entity = _mapper.Map<TEntity>(dto);
         entity = await _repository.AddAsync(entity);
         return _mapper.Map<TDto>(entity);
     }
 
-    public virtual async Task UpdateAsync(TDto dto)
+    public virtual async Task UpdateAsync(TCreateDeleteModel dto)
     {
         TEntity entity = _mapper.Map<TEntity>(dto);
         await _repository.UpdateAsync(entity);

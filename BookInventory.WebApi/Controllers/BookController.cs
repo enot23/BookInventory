@@ -36,7 +36,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<BookDto>> CreateBook(BookDto bookDto)
+    public async Task<ActionResult<BookDto>> CreateBook(BookCreateUpdateModel bookDto)
     {
         if (bookDto == null)
         {
@@ -47,9 +47,9 @@ public class BooksController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateBook(int id, BookDto bookDto)
+    public async Task<IActionResult> UpdateBook(int id, BookCreateUpdateModel bookDto)
     {
-        if (id != bookDto.Id)
+        if (bookDto == null)
         {
             return BadRequest();
         }

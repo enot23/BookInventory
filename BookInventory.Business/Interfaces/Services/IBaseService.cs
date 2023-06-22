@@ -7,7 +7,7 @@ using BookInventory.Data.Entities;
 
 namespace BookInventory.Business.Interfaces;
 
-public interface IBaseService<TEntity, TDto> where TEntity : BaseEntity where TDto : BaseDto
+public interface IBaseService<TEntity, TDto, TCreateDeleteModel> where TEntity : BaseEntity where TDto : BaseDto
 {
     Task<TDto> GetByIdAsync(int id);
     
@@ -15,9 +15,9 @@ public interface IBaseService<TEntity, TDto> where TEntity : BaseEntity where TD
     
     Task<IEnumerable<TDto>> FindAsync(Expression<Func<TEntity, bool>> predicate);
     
-    Task<TDto> AddAsync(TDto dto);
+    Task<TDto> AddAsync(TCreateDeleteModel dto);
     
-    Task UpdateAsync(TDto dto);
+    Task UpdateAsync(TCreateDeleteModel dto);
     
     Task DeleteAsync(int id);
 }

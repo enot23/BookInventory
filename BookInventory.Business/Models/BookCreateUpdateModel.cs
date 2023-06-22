@@ -2,7 +2,7 @@
 
 namespace BookInventory.Business.Models;
 
-public class BookDto : BaseAuditableDto
+public class BookCreateUpdateModel
 {
     [Required]
     public string Title { get; set; }
@@ -15,8 +15,6 @@ public class BookDto : BaseAuditableDto
     public int? PublicationYear { get; set; }
     
     public int Quantity { get; set; }
-    
-    public int CategoryId { get; set; }
-    
-    public string CategoryName { get; set; }
+
+    public int CategoryId { get; set; } = 1;
 }

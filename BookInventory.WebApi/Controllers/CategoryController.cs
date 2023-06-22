@@ -36,7 +36,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<CategoryDto>> CreateCategory(CategoryDto categoryDto)
+    public async Task<ActionResult<CategoryDto>> CreateCategory(CategoryCreateUpdateModel categoryDto)
     {
         if (categoryDto == null)
         {
@@ -47,9 +47,9 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateCategory(int id, CategoryDto categoryDto)
+    public async Task<IActionResult> UpdateCategory(int id, CategoryCreateUpdateModel categoryDto)
     {
-        if (id != categoryDto.Id)
+        if (categoryDto == null)
         {
             return BadRequest();
         }
