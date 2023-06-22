@@ -1,4 +1,7 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 using AutoMapper;
 using BookInventory.Business.Interfaces;
 using BookInventory.Business.Models;
@@ -36,14 +39,14 @@ public class BaseService<TEntity, TDto> : IBaseService<TEntity, TDto> where TEnt
         return _mapper.Map<IEnumerable<TDto>>(entities);
     }
 
-    public async Task<TDto> AddAsync(TDto dto)
+    public virtual async Task<TDto> AddAsync(TDto dto)
     {
         TEntity entity = _mapper.Map<TEntity>(dto);
         entity = await _repository.AddAsync(entity);
         return _mapper.Map<TDto>(entity);
     }
 
-    public async Task UpdateAsync(TDto dto)
+    public virtual async Task UpdateAsync(TDto dto)
     {
         TEntity entity = _mapper.Map<TEntity>(dto);
         await _repository.UpdateAsync(entity);

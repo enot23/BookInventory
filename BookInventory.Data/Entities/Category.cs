@@ -1,4 +1,6 @@
-﻿namespace BookInventory.Data.Entities;
+﻿using System.Collections.Generic;
+
+namespace BookInventory.Data.Entities;
 
 public class Category : AuditableBaseEntity
 {

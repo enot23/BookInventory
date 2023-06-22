@@ -1,4 +1,6 @@
-﻿namespace BookInventory.Data.Entities;
+﻿using System;
+
+namespace BookInventory.Data.Entities;
 
 public class AuditableBaseEntity: BaseEntity
 {

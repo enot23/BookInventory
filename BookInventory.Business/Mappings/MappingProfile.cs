@@ -2,7 +2,7 @@
 using BookInventory.Business.Models;
 using BookInventory.Data.Entities;
 
-namespace BookInventory.Common.Mappings;
+namespace BookInventory.Business.Mappings;
 
 public class MappingProfile : Profile
 {
